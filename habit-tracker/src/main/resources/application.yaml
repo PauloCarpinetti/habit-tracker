@@ -1,13 +1,15 @@
 spring:
-  config:
-    import: "classpath:.secrets.yml"
   application:
     name: habit-tracker
+  config:
+    import: "classpath:.secrets.yml"
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/habit-tracker?useTimezone=true&serverTimezone=UTC
-    username: ${dbusername}
-    password: ${dbpassword}
+    username: root
+    password: Hepta2020#
+  flyway:
+    enabled: true
   jpa:
     hibernate:
       ddl-auto: none
@@ -15,3 +17,8 @@ spring:
       hibernate:
     show-sql: false
     open-in-view: false
+security:
+  jwt:
+    token:
+      secret-key: 53cr37
+      expire-length: 3600000
