@@ -10,12 +10,12 @@ import java.util.Objects;
 import java.util.UUID;
 
 @Entity
-@Table(name = "tb_habits")
+@Table(name = "habits")
 public class Habit {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
@@ -46,11 +46,11 @@ public class Habit {
 
     public Habit() {}
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

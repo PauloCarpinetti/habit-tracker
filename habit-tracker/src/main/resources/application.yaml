@@ -6,8 +6,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/habit-tracker?useTimezone=true&serverTimezone=UTC
-    username: root
-    password: Hepta2020#
+    username: ${dbusername}
+    password: ${dbpassword}
   flyway:
     enabled: true
   jpa:
@@ -22,3 +22,9 @@ security:
     token:
       secret-key: 53cr37
       expire-length: 3600000
+spring-doc:
+  paths-to-match:
+    - /v1/**
+    - /auth/**
+  swagger-ui:
+    use-root-path: true

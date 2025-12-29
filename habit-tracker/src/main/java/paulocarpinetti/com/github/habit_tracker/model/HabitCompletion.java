@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @Entity
 @Table(
-        name = "tb_habit_completions",
+        name = "habit_completions",
         uniqueConstraints = {
                 @UniqueConstraint(columnNames = {"habit_id", "date"})
         }
@@ -17,8 +17,8 @@ import java.util.UUID;
 public class HabitCompletion {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "habit_id", nullable = false)
@@ -32,11 +32,11 @@ public class HabitCompletion {
 
     public HabitCompletion() {}
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

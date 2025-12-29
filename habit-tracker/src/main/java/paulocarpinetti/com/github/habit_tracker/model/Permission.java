@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "tb_permission")
+@Table(name = "permission")
 public class Permission implements GrantedAuthority, Serializable {
 
     @Serial
